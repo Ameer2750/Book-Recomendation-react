@@ -38,8 +38,8 @@ const BookList = ({searchQuery}) => {
                     return (
                         <tr key={book.key}>
                             <td>{book.title}</td>
-                            <td>{book.author_name?.join(', ')}</td>
-                            <td>{book.first_publish_year}</td>
+                            {book.author_name?.join(', ') ? <td>{book.author_name?.join(', ') }</td> : <td> - </td> }
+                            {book.first_publish_year ? <td>{book.first_publish_year}</td> : <td> - </td>}
                         </tr>
                     )
                 })}
